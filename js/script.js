@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
         tasks = storedTasks;
         updateTasksList();
         updateStatus();
+        checkDueDates();
     }
-
-    checkDueDates();
 });
 
 let tasks = [];
@@ -61,71 +60,30 @@ const updateStatus = () => {
     const totalTasks = tasks.length;
 
     if (totalTasks === 0) {
-        document.getElementById('progress').style.width = `0%`;
-        document.getElementById('numbers').innerText = `0 / 0`;
+        document.getElementById('progress').style.width = 0%;
+        document.getElementById('numbers').innerText = 0 / 0;
         return;
     }
 
     const progress = (completedTasks/totalTasks) * 100;
-    document.getElementById('progress').style.width = `${progress}%`;
+    document.getElementById('progress').style.width = ${progress}%;
 
-    document.getElementById('numbers').innerText = `${completedTasks} / ${totalTasks}`;
+    document.getElementById('numbers').innerText = ${completedTasks} / ${totalTasks};
 
     if(tasks.length && completedTasks === totalTasks) {
         launchConfetti();
     }
 }
 
-const updateTasksList = () => {
-    const taskList = document.querySelector('.task-list');
-    taskList.innerHTML = '';
-
-    tasks.forEach((task, index) => {
-        const listItem = document.createElement('li');
-
-        listItem.innerHTML = `
-            <div class="taskItem">
-                <div class="task ${task.completed ? 'completed' : ''}">
-                    <input type="checkbox" class="checkbox" ${task.completed ? "checked" : ""}/>
-                    <div class="task-text-container">
-                    <p>${task.text}</p>
-                    <p class="due-date">${task.dueDate ? `Due: ${task.dueDate}` : 'No Due Date'}</p>
-                </div>
-                </div>
-                <div class="icons">
-                    <img src="assets/edit-icon.png" alt="Edit" class="edit-icon">
-                    <img src="assets/delete-icon.png" alt="Delete" class="delete-icon">
-                </div>
-            </div>
-        `;
-
-        const checkbox = listItem.querySelector('.checkbox');
-        checkbox.addEventListener('change', () => toggleTaskComplete(index));
-
-        const editIcon = listItem.querySelector('.edit-icon');
-        editIcon.addEventListener('click', () => editTask(index));
-
-        const deleteIcon = listItem.querySelector('.delete-icon');
-        deleteIcon.addEventListener('click', () => deleteTask(index));
-
-        taskList.appendChild(listItem);
-    });
-};
-
 const checkDueDates = () => {
     const today = new Date().toISOString().split('T')[0];
 
     tasks.forEach((task, index) => {
-        if (task.dueDate && task.dueDate === today) {
-            alert(`Reminder: Your Task "${task.text}" is Due Today!`);
+        if(task.dueDate && task.dueDate === today) {
+            alert(Reminder: Your Task "${task.text}" is Due Today!);
         }
     });
 }
-
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    addTask();
-});
 
 const launchConfetti = () => {
     const count = 200,
@@ -134,11 +92,11 @@ const launchConfetti = () => {
     };
 
     function fire(particleRatio, opts) {
-        confetti(
-            Object.assign({}, defaults, opts, {
-                particleCount: Math.floor(count * particleRatio),
-            })
-        );
+    confetti(
+        Object.assign({}, defaults, opts, {
+        particleCount: Math.floor(count * particleRatio),
+        })
+    );
     }
 
     fire(0.25, {
