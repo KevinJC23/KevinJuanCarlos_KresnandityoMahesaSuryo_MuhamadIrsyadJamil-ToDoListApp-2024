@@ -9,9 +9,9 @@ Add task, delete task, save task, toggle task complete, update task, etc.
 <pre>git clone https://github.com/KevinJC23/ToDoListApp.git</pre>
 
 ## 🤝 Contributor
-| Name       |
-|:-----------|
-| Kevin Juan Carlos | 
-| Kresnandityo Mahesa Suryo | 
-| Muhammad Irsyad Jamil | 
+| StudentID       | Name       |
+|:-----------|:-----------|
+| 001202300054     | Kevin Juan Carlos | 
+| 001202300068     | Kresnandityo Mahesa Suryo | 
+| 001202300065     | Muhamad Irsyad Jamil | 
  
