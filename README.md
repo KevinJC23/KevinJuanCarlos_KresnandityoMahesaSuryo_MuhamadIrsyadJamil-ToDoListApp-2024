@@ -5,7 +5,6 @@ To make it easier for people to keep up with their tasks in real time and motiva
 Add task, delete task, save task, toggle task complete, update task, etc.
 
 ## 🤝 Contributor
-| Kiri       | 
 |:-----------|
 | Kevin Juan Carlos | 
 | Kresnandityo Mahesa Suryo | 
