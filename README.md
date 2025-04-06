@@ -6,7 +6,7 @@ Add task, delete task, save task, toggle task complete, update task, etc.
 
 ## 📦Installation
 1. Clone Repository
-<pre>git clone https://github.com/KevinJC23/BookshelfApp.git</pre>
+<pre>git clone https://github.com/KevinJC23/ToDoListApp.git</pre>
 
 ## 🤝 Contributor
 | Name       |
